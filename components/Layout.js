@@ -1,6 +1,9 @@
 import classNames from 'classnames';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Layout.module.css';
+import SEO from './SEO';
+import Header from './Header';
+import Footer from './Footer';
 
 export function GradientBackground({ variant, className }) {
   const classes = classNames(
@@ -14,7 +17,7 @@ export function GradientBackground({ variant, className }) {
   return <div className={classes} />;
 }
 
-export default function Layout({ children }) {
+export default function Layout({ globalData, children }) {
   const setAppTheme = () => {
     const darkMode = localStorage.getItem('theme') === 'dark';
     const lightMode = localStorage.getItem('theme') === 'light';
@@ -52,7 +55,18 @@ export default function Layout({ children }) {
   return (
     <div className="relative pb-24 overflow-hidden">
       <div className="flex flex-col items-center max-w-2xl w-full mx-auto">
+        <SEO title={globalData.name} description={globalData.blogTitle} />
+        <Header name={globalData.name} />
         {children}
+        <Footer copyrightText={globalData.footerText} />
+        <GradientBackground
+          variant="large"
+          className="fixed top-20 opacity-40 dark:opacity-60"
+        />
+        <GradientBackground
+          variant="small"
+          className="absolute bottom-0 opacity-20 dark:opacity-10"
+        />
       </div>
     </div>
   );

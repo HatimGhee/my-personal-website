@@ -1,38 +1,19 @@
-import Link from 'next/link';
-import { getPosts } from '../utils/mdx-utils';
-
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Layout, { GradientBackground } from '../components/Layout';
-import ArrowIcon from '../components/ArrowIcon';
+import Layout from '../components/Layout';
 import { getGlobalData } from '../utils/global-data';
-import SEO from '../components/SEO';
 
-export default function Index({ posts, globalData }) {
+export default function Index({ globalData }) {
   return (
-    <Layout>
-      <SEO title={globalData.name} description={globalData.blogTitle} />
-      <Header name={globalData.name} />
+    <Layout globalData={globalData}>
       <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12">
-        </h1>
+        <h1 className="text-3xl lg:text-5xl text-center mb-12"></h1>
       </main>
-      <Footer copyrightText={globalData.footerText} />
-      <GradientBackground
-        variant="large"
-        className="fixed top-20 opacity-40 dark:opacity-60"
-      />
-      <GradientBackground
-        variant="small"
-        className="absolute bottom-0 opacity-20 dark:opacity-10"
-      />
     </Layout>
   );
 }
 
 export function getStaticProps() {
-  const posts = getPosts();
   const globalData = getGlobalData();
-
-  return { props: { posts, globalData } };
+  return {
+    props: { globalData },
+  };
 }
