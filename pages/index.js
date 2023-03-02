@@ -1,19 +1,24 @@
 import Layout from '../components/Layout';
 import { getGlobalData } from '../utils/global-data';
+import { useTranslations } from 'next-intl';
 
 export default function Index({ globalData }) {
+  const t = useTranslations('website');
   return (
     <Layout globalData={globalData}>
       <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12"></h1>
+        <h1 className="text-3xl lg:text-5xl text-center mb-12">{t('Home')}</h1>
       </main>
     </Layout>
   );
 }
 
-export function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const globalData = getGlobalData();
   return {
-    props: { globalData },
+    props: {
+      globalData,
+      messages: (await import(`../messages/${locale}.json`)).default,
+    },
   };
 }

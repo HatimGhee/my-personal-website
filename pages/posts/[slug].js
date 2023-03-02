@@ -81,7 +81,7 @@ export default function PostPage({
   );
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, locale }) => {
   const globalData = getGlobalData();
 
   const { mdxSource, data } = await getPostBySlug(params.slug);
@@ -99,6 +99,7 @@ export const getStaticProps = async ({ params }) => {
       frontMatter: data,
       prevPost,
       nextPost,
+      messages: (await import(`../../messages/${locale}.json`)).default,
     },
   };
 };

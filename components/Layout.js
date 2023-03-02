@@ -5,6 +5,7 @@ import SEO from './SEO';
 import Header from './Header';
 import Footer from './Footer';
 import SideNav from './SideNav';
+import { useRouter } from 'next/router';
 
 export function GradientBackground({ variant, className }) {
   const classes = classNames(
@@ -19,6 +20,8 @@ export function GradientBackground({ variant, className }) {
 }
 
 export default function Layout({ globalData, children }) {
+  const router = useRouter();
+  const { locale } = router;
   const setAppTheme = () => {
     const darkMode = localStorage.getItem('theme') === 'dark';
     const lightMode = localStorage.getItem('theme') === 'light';
@@ -54,7 +57,7 @@ export default function Layout({ globalData, children }) {
   }, []);
 
   return (
-    <>
+    <div dir={locale == 'ar' ? 'rtl' : 'ltr'}>
       <SEO title={globalData.name} description={globalData.blogTitle} />
       <SideNav />
       <div className="relative pb-24 overflow-hidden">
@@ -72,6 +75,6 @@ export default function Layout({ globalData, children }) {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }
