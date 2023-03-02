@@ -1,5 +1,3 @@
-![Netlify Next.js Blog Template designed by Bejamas](github-banner.svg)
-
 [![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/nextjs-blog-theme)
 
 A customizable blog starter using:
@@ -8,8 +6,6 @@ A customizable blog starter using:
 - [Tailwind](https://tailwindcss.com/) v3.0
 - Built-in [MDX](https://mdxjs.com/) v1 support
 - Includes modern design with dark & light themes
-
-![Preview of blog theme. Author named Jay Doe and blog's name is "Next.js Blog Theme" with one blog post](nextjs-blog-theme-preview.png)
 
 [Take a gander at the demo.](https://bejamas-nextjs-blog.netlify.app)
 
@@ -50,10 +46,6 @@ yarn run dev
 ```
 
 Open your browser and visit <http://localhost:3000>, your project should be running!
-
-### Using the Setup Wizard
-
-![Preview of Setup Wizard showing the initial page of a setup form](nextjs-setup-wizard.png)
 
 Through the [setup wizard](https://nextjs-wizard.netlify.app/), you can create your blog in a few clicks and deploy to Netlify.
 

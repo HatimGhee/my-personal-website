@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import styles from './Layout.module.css';
 import SEO from './SEO';
 import Header from './Header';
