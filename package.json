@@ -1,17 +1,10 @@
 {
-  "name": "nextjs-blog-theme",
-  "description": "A customizable Next.js and Tailwind blog starter. Designed by the Bejamas agency.",
-  "author": "Bejamas and Netlify Inc.",
+  "name": "hatim-gheewala-portfolio",
+  "description": "A portfolio website for Hatim Gheewala, Designed & developed by Hatim Gheewala",
+  "author": "Hatim Gheewala",
   "contributors": [
-    "Charlie Gerard",
-    "Prince Wilson",
-    "Tara Manicsic",
-    "Thom Krupa"
+    "Hatim Gheewala"
   ],
-  "homepage": "https://github.com/netlify-templates/nextjs-blog-theme",
-  "bugs": {
-    "url": "https://github.com/netlify-templates/nextjs-blog-theme/issues"
-  },
   "scripts": {
     "dev": "next",
     "dev:watch": "next-remote-watch ./posts",
