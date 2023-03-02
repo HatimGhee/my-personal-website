@@ -13,7 +13,7 @@ const Index = ({ globalData }) => {
         <div className="flex flex-col items-center max-w-2xl w-full mx-auto"></div>
           <main className="text-center w-full">
             <div>
-              AHhh Great you found it, now go back to{' '}
+              Ahh Great you found it, now go back to{' '}
               <Link href={'/'}>
                 <span className="underline hover:cursor-pointer">Home</span>
               </Link>{' '}
