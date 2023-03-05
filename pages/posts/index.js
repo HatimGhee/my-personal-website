@@ -45,9 +45,14 @@ export default function Index({ posts, globalData }) {
   );
 }
 
-export function getStaticProps() {
+export async function getStaticProps({ locale }) {
   const posts = getPosts();
   const globalData = getGlobalData();
-
-  return { props: { posts, globalData } };
+  return {
+    props: {
+      globalData,
+      posts,
+      messages: (await import(`../../messages/${locale}.json`)).default,
+    },
+  };
 }
