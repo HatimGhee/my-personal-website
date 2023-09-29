@@ -58,7 +58,7 @@ export const getPostBySlug = async (slug) => {
 };
 
 export const getNextPostBySlug = (slug) => {
-  const posts = getPosts();
+  const posts = getPosts();  
   const currentFileName = `${slug}.mdx`;
   const currentPost = posts.find((post) => post.filePath === currentFileName);
   const currentPostIndex = posts.indexOf(currentPost);

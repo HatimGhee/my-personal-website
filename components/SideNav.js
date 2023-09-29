@@ -6,26 +6,26 @@ const SideNav = () => {
   const router = useRouter();
   const { locale, pathname, asPath, query } = router;
   return (
-    <aside className="w-full md:w-20">
+    <aside>
       <nav>
         <ul>
-          <li className="underline hover:text-gray-500">
+          <li>
             <Link href={'/'}>Home</Link>
           </li>
-          <li className="underline hover:text-gray-500">
+          <li>
             <Link href={'about'}>About</Link>
           </li>
-          <li className="underline hover:text-gray-500">
+          <li>
             <Link href={'services'}>Services</Link>
           </li>
-          <li className="underline hover:text-gray-500">
+          <li>
             <Link href={'contact'}>Contact</Link>
           </li>
-          <li className="underline hover:text-gray-500">
+          <li>
             <Link href={'work'}>Work</Link>
           </li>
-          <li className="underline hover:text-gray-500">
-            <Link href={'posts'}>Blogs</Link>
+          <li>
+            <Link href={'posts'}>Posts</Link>
           </li>
           <li>
             <ThemeSwitcher />
@@ -34,7 +34,6 @@ const SideNav = () => {
             <div className="m-10">
               {locale === 'ar' ? (
                 <button
-                  className="underline hover:text-blue-600"
                   type="button"
                   onClick={() => {
                     router.push({ pathname, query }, asPath, { locale: 'en' });
@@ -44,7 +43,6 @@ const SideNav = () => {
                 </button>
               ) : (
                 <button
-                  className="underline hover:text-blue-600"
                   type="button"
                   onClick={() => {
                     router.push({ pathname, query }, asPath, { locale: 'ar' });

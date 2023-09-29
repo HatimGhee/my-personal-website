@@ -5,7 +5,6 @@ const sunIcon = (
     height="24"
     fill="none"
     viewBox="0 0 25 24"
-    className="dark:opacity-50"
   >
     <g
       stroke="#fff"
@@ -19,7 +18,6 @@ const sunIcon = (
     <defs>
       <clipPath id="clip0_192_823">
         <path
-          className="fill-current text-white"
           d="M0 0H24V24H0z"
           transform="translate(.5)"
         ></path>
@@ -49,7 +47,7 @@ const moonIcon = (
 
 const ThemeSwitcher = () => {
   return (
-    <div className="flex mt-6 bg-white justify-center dark:bg-gray-900 rounded-3xl p-1">
+    <div>
       <button
         type="button"
         aria-label="Use Dark Mode"
@@ -57,7 +55,6 @@ const ThemeSwitcher = () => {
           document.documentElement.classList.add('dark');
           localStorage.setItem('theme', 'dark');
         }}
-        className="flex items-center h-full pr-2 dark:bg-primary rounded-3xl flex justify-center align-center p-2 w-24 h-10 transition"
       >
         {moonIcon}
       </button>
@@ -69,7 +66,6 @@ const ThemeSwitcher = () => {
           document.documentElement.classList.remove('dark');
           localStorage.setItem('theme', 'light');
         }}
-        className="flex items-center h-full pr-2 bg-primary dark:bg-transparent rounded-3xl flex justify-center align-center p-2 w-24 h-10 transition"
       >
         {sunIcon}
       </button>

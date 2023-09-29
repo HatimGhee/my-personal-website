@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
         timeZone="Asia/Kuwait"
         messages={pageProps.messages}
       >
-        <span className="theme-bejamas" />
+        <span/>
         <Component {...pageProps} />
       </NextIntlProvider>
     </>

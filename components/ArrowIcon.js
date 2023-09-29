@@ -9,7 +9,7 @@ export default function ArrowIcon({ className, color = 'text-primary' }) {
       className={className}
     >
       <path
-        className={`stroke-current ${color}`}
+        className={`${color}`}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"

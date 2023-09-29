@@ -6,14 +6,15 @@ export default function Index({ globalData }) {
   const t = useTranslations('website');
   return (
     <Layout globalData={globalData}>
-      <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12">{t('Home')}</h1>
+      <main>
+        <h1>{t('Home')}</h1>
       </main>
     </Layout>
   );
 }
 
 export async function getStaticProps({ locale }) {
+  console.log('==================== home logging')
   const globalData = getGlobalData();
   return {
     props: {

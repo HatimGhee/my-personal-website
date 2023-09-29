@@ -7,18 +7,6 @@ import Footer from './Footer';
 import SideNav from './SideNav';
 import { useRouter } from 'next/router';
 
-export function GradientBackground({ variant, className }) {
-  const classes = classNames(
-    {
-      [styles.colorBackground]: variant === 'large',
-      [styles.colorBackgroundBottom]: variant === 'small',
-    },
-    className
-  );
-
-  return <div className={classes} />;
-}
-
 export default function Layout({ globalData, children }) {
   const router = useRouter();
   const { locale } = router;
@@ -60,19 +48,11 @@ export default function Layout({ globalData, children }) {
     <div dir={locale == 'ar' ? 'rtl' : 'ltr'}>
       <SEO title={globalData.name} description={globalData.blogTitle} />
       <SideNav />
-      <div className="relative pb-24 overflow-hidden">
-        <div className="flex flex-col items-center max-w-2xl w-full mx-auto">
+      <div>
+        <div>
           <Header name={globalData.name} />
           {children}
           <Footer copyrightText={globalData.footerText} />
-          <GradientBackground
-            variant="large"
-            className="fixed top-20 opacity-40 dark:opacity-60"
-          />
-          <GradientBackground
-            variant="small"
-            className="absolute bottom-0 opacity-20 dark:opacity-10"
-          />
         </div>
       </div>
     </div>
