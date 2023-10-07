@@ -1,9 +1,7 @@
 export default function Footer({ copyrightText }) {
   return (
     <footer>
-      <p>
-        {copyrightText}
-      </p>
+      <p>{copyrightText}</p>
     </footer>
   );
 }

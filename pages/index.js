@@ -14,7 +14,6 @@ export default function Index({ globalData }) {
 }
 
 export async function getStaticProps({ locale }) {
-  console.log('==================== home logging')
   const globalData = getGlobalData();
   return {
     props: {

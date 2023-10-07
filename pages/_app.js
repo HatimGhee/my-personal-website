@@ -1,8 +1,13 @@
-import '../styles/globals.css';
+import "bootstrap/dist/css/bootstrap.min.css"; // Import bootstrap CSS
+import "../styles/globals.css";
 import 'prismjs/themes/prism-tomorrow.css';
 import { NextIntlProvider } from 'next-intl';
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
   return (
     <>
       <NextIntlProvider

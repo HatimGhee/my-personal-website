@@ -1,10 +1,7 @@
-import classNames from 'classnames';
 import { useEffect } from 'react';
-import styles from './Layout.module.css';
 import SEO from './SEO';
-import Header from './Header';
 import Footer from './Footer';
-import SideNav from './SideNav';
+import Navbar from './Navbar';
 import { useRouter } from 'next/router';
 
 export default function Layout({ globalData, children }) {
@@ -47,14 +44,9 @@ export default function Layout({ globalData, children }) {
   return (
     <div dir={locale == 'ar' ? 'rtl' : 'ltr'}>
       <SEO title={globalData.name} description={globalData.blogTitle} />
-      <SideNav />
-      <div>
-        <div>
-          <Header name={globalData.name} />
-          {children}
-          <Footer copyrightText={globalData.footerText} />
-        </div>
-      </div>
+      <Navbar />
+      <div>{children}</div>
+      <Footer copyrightText={globalData.footerText} />
     </div>
   );
 }
