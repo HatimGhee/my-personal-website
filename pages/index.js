@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import Layout from '../components/Layout';
+import styles from './index.module.css';
 import { getGlobalData } from '../utils/global-data';
 import { useTranslations } from 'next-intl';
 
@@ -7,7 +9,17 @@ export default function Index({ globalData }) {
   return (
     <Layout globalData={globalData}>
       <main>
-        <h1>{t('Home')}</h1>
+        <div className={styles.card}>
+          <Image
+            width={'100%'}
+            height={'100%'}
+            alt="Hatim"
+            src={'/images/hatim.png'}
+          ></Image>
+          <h1>Hatim Gheewala</h1>
+          <p className={styles.title}>Software Engineer</p>
+          <p></p>
+        </div>
       </main>
     </Layout>
   );

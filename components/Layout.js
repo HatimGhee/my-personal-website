@@ -45,7 +45,7 @@ export default function Layout({ globalData, children }) {
     <div dir={locale == 'ar' ? 'rtl' : 'ltr'}>
       <SEO title={globalData.name} description={globalData.blogTitle} />
       <Navbar />
-      <div>{children}</div>
+      {children}
       <Footer copyrightText={globalData.footerText} />
     </div>
   );
