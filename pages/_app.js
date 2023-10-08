@@ -1,12 +1,12 @@
-import "bootstrap/dist/css/bootstrap.min.css"; // Import bootstrap CSS
-import "../styles/globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import bootstrap CSS
+import '../styles/globals.css';
 import 'prismjs/themes/prism-tomorrow.css';
 import { NextIntlProvider } from 'next-intl';
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    require('bootstrap/dist/js/bootstrap.bundle.min.js');
   }, []);
   return (
     <>
@@ -24,7 +24,6 @@ function MyApp({ Component, pageProps }) {
         timeZone="Asia/Kuwait"
         messages={pageProps.messages}
       >
-        <span/>
         <Component {...pageProps} />
       </NextIntlProvider>
     </>
